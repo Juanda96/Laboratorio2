@@ -127,6 +127,7 @@
             this.btnTelefono.TabIndex = 13;
             this.btnTelefono.Text = "Agregar";
             this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
             // 
             // listTelefono
             // 
