@@ -62,8 +62,8 @@ namespace Laboratorio2
 
         public int edad
         {
-            get { return _FechaNac.Year - DateTime.Now.Year; }
-            set { _edad = _FechaNac.Year - DateTime.Now.Year; }
+            get { return DateTime.Now.Year - _FechaNac.Year ; }
+            set { _edad = DateTime.Now.Year - _FechaNac.Year; }
         }
 
         private LinkedList<int> _telefonos;

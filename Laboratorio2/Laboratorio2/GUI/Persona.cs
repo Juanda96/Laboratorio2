@@ -110,14 +110,29 @@ namespace Laboratorio2
         private void button1_Click(object sender, EventArgs e)
         {
             LinkedList<int> numeros = new LinkedList<int>();
-            foreach (int item in listTelefono.Items)
+            foreach (string item in listTelefono.Items)
             {
-                numeros.AddLast(item);
+                numeros.AddLast(int.Parse(item));
             }
             if (!(txtNombre.Text.Equals("")||txtApellido1.Text.Equals("")||txtApellido2.Text.Equals("")||listTelefono.Items.Count==0))
             {
                 Cliente cl = new Cliente(linkCl.Count,txtNombre.Text,txtApellido1.Text,txtApellido2.Text,cmbProvincias.Text+"-"+cmbCantones.Text+"-"+cmbDistritos.Text,dtpFecha.Value,numeros,cmbEstado.Text);
                 linkCl.AddLast(cl);
+                dgvClientes.DataSource = linkCl.ToArray();
+                
+            }
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text.Equals(""))
+            {
+                MessageBox.Show("Digite un numero de telefono");
+            }
+            else 
+            {
+                listTelefono.Items.Add(txtTelefono.Text);
             }
         }
     }
